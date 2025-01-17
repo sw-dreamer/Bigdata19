@@ -4,7 +4,7 @@
 
 ## 프로젝트 목록
 
-1. [배열 실습 문제](https://github.com/sw-dreamer/Bigdata19/tree/main/%EB%B0%B0%EC%97%B4%20%EC%8B%A4%EC%8A%B5%EB%AC%B8%EC%A0%9C)
+1. [배열 실습 문제](https://github.com/sw-dreamer/Bigdata19/tree/main/01.%20%EB%B0%B0%EC%97%B4%20%EC%8B%A4%EC%8A%B5%EB%AC%B8%EC%A0%9C)
 2. [컬렉션 실습 문제](https://github.com/sw-dreamer/Bigdata19/tree/main/%EC%BB%AC%EB%A0%89%EC%85%98%20%EC%8B%A4%EC%8A%B5%EB%AC%B8%EC%A0%9C)
 3. [HashMap을 이용한 연락처 관리 프로그램](https://github.com/sw-dreamer/Bigdata19/tree/main/%EC%97%B0%EB%9D%BD%EC%B2%98%20%EA%B4%80%EB%A6%AC%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20(Hashmap%20%EC%82%AC%EC%9A%A9))
 
