@@ -53,6 +53,7 @@
 ![image](https://github.com/user-attachments/assets/8a06eda4-dca0-4b38-acd7-7729ed36e9cf)
 
 총 43건 조회 되어야함
+
 ![image](https://github.com/user-attachments/assets/b899c7c4-bb4a-45b1-86b6-e9a310251a9d)
 
 
