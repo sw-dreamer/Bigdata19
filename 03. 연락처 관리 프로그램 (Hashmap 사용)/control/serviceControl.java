@@ -14,8 +14,12 @@ public class serviceControl {
 		Scanner scanner = new Scanner(System.in);
 		String name = null;
 		int number = 0;
-		ChangePersonService changeperson = new ChangePersonHashmap();
+		ChangePersonService changeperson = null;
 
+		if (control.equals("hashmap")) {
+			changeperson = new ChangePersonHashmap();
+			changeperson.putHashList(readWriteToBinary.readFile());
+		}
 		
 		while (true) {
 			printresult.printMenu();
