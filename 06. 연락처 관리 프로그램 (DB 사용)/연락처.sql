@@ -1,4 +1,4 @@
-create database contact;
+create database IF NOT EXISTS contact;
 
 use contact;
 
