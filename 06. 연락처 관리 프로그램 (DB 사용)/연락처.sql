@@ -1,3 +1,7 @@
+create database contact;
+
+use contact;
+
 CREATE TABLE IF NOT EXISTS relationT (
     relationNo VARCHAR(50) NOT NULL,
     relationship ENUM('가족', '친구', '기타') NOT NULL,
