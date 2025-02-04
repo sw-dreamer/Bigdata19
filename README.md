@@ -10,6 +10,7 @@
 4. [데이터베이스 1차 실습문제](https://github.com/sw-dreamer/Bigdata19/tree/main/04.%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%201%EC%B0%A8%20%EC%8B%A4%EC%8A%B5%EB%AC%B8%EC%A0%9C)
 5. [데이터베이스 2차 실습문제](https://github.com/sw-dreamer/Bigdata19/blob/main/05.%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%202%EC%B0%A8%20%EC%8B%A4%EC%8A%B5%EB%AC%B8%EC%A0%9C)
 6. [MySQL Database를 이용한 연락처 관리 프로그램](https://github.com/sw-dreamer/Bigdata19/tree/main/06.%20%EC%97%B0%EB%9D%BD%EC%B2%98%20%EA%B4%80%EB%A6%AC%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20(DB%20%EC%82%AC%EC%9A%A9))
+7. [연락처 관리 프로그램 MVC 모델](https://github.com/sw-dreamer/Bigdata19/tree/main/07.%20%EC%97%B0%EB%9D%BD%EC%B2%98%20%EA%B4%80%EB%A6%AC%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20(MVC%20%EB%AA%A8%EB%8D%B8))
 ---
 
 ### 1. 배열 실습 문제
