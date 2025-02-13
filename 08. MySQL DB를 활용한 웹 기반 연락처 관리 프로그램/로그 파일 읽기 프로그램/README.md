@@ -14,8 +14,7 @@ Windows 환경에서 Linux나 Mac처럼 `tail` 명령어를 직접 사용할 수
 
 ## 사용법
 
-프로그램을 실행한 후, 아래와 같은 명령어로 로그 파일을 실시간으로 확인할 수 있습니다.
+윈도우 에서는 IntelliJ_log.bat, MacOS에서는 IntelliJ_log.sh 프로그램을 실행한 후, 아래와 같은 명령어로 로그 파일을 실시간으로 확인할 수 있습니다.
 
-## 실행 예시
 
 ![image](https://github.com/user-attachments/assets/d2d2f26c-b081-4540-85d8-14e73e7cbb5d)
