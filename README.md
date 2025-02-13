@@ -307,7 +307,7 @@
 #### 사용된 프로그램
 - **MySQL 8.0.17**
 - **DBeaver**
-- **IntelliJ IDEA Community Edition**
+- **IntelliJ IDEA 2024.3.2.2 (Community Edition)**
 
 ### 주요 기능
 
