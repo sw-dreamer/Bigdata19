@@ -1,0 +1,43 @@
+{{>layout/header}}
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h3 class="card-title text-center mb-4">연락처 등록</h3>
+
+        <form action="/contact/{{memberId}}/add" method="POST" onsubmit="return validate()">
+            <div class="mb-3">
+                <label class="form-label" for="name">이름</label>
+                <input class="form-control" id="name" type="text" placeholder="이름을 입력하세요" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="phonenumber">전화번호</label>
+                <input class="form-control" id="phonenumber" type="text" onkeyup="inputPhoneNumber(this);" minlength="12" maxlength="13" placeholder="전화번호를 입력하세요" name="phonenumber" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="address">주소</label>
+                <input class="form-control" id="address" type="text" placeholder="주소를 입력하세요" name="address" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="gubunId">구분</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-lg example" name="gubunId" required>
+                    <option value="" disabled selected>선택하세요</option>
+                    <option value="1">가족</option>
+                    <option value="2">친구</option>
+                    <option value="3">기타</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">사진</label>
+                <input class="form-control" type="file" id="formFile" name="photo">
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-primary w-40" type="submit">등록</button>
+                <button class="btn btn-light w-40" type="reset">취소</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{{>layout/footer}}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Sign up</title>
+    <style>
+        /* Color palette */
+        $gray: #8E9AAF;
+        $lavender: #CBC0D3;
+        $pale: #EAC7CC;
+        $white: #f6f6f6;
+        $pink: darken($pale, 20%);
+
+        /* Font imports */
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora');
+        $sans-serif: 'Open Sans', sans-serif;
+        $serif: 'Lora', serif;
+
+        /* Global Styles */
+        body {
+            background: $lavender;
+        }
+
+        /* div box styling */
+        .container {
+            margin: auto;
+            width: 650px;
+            height: 550px;
+            position: relative;
+        }
+
+        .welcome {
+            background: $white;
+            width: 650px;
+            height: 415px;
+            position: absolute;
+            top: 25%;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+        }
+
+        .pinkbox {
+            position: absolute;
+            top: -10%;
+            left: 5%;
+            background: $pale;
+            width: 320px;
+            height: 500px;
+            border-radius: 5px;
+            box-shadow: 2px 0 10px rgba(0,0,0,.1);
+            transition: all .5s ease-in-out;
+            z-index: 2;
+        }
+
+        .nodisplay {
+            display: none;
+            transition: all .5s ease;
+        }
+
+        .leftbox, .rightbox {
+            position: absolute;
+            width: 50%;
+            transition: 1s all ease;
+        }
+
+        .leftbox {
+            left: -2%;
+        }
+        .rightbox {
+            right: -2%;
+        }
+
+        /* Font & button styling */
+        h1 {
+            font-family: $sans-serif;
+            text-align: center;
+            margin-top: 95px;
+            text-transform: uppercase;
+            color: $white;
+            font-size: 2em;
+            letter-spacing: 8px;
+        }
+
+        .title {
+            font-family: $serif;
+            color: $gray;
+            font-size: 1.8em;
+            line-height: 1.1em;
+            letter-spacing: 3px;
+            text-align: center;
+            font-weight: 300;
+            margin-top: 20%;
+        }
+
+        .desc {
+            margin-top: -8px;
+        }
+
+        .account {
+            margin-top: 45%;
+            font-size: 10px;
+        }
+
+        p {
+            font-family: $sans-serif;
+            font-size: .7em;
+            letter-spacing: 2px;
+            color: $gray;
+            text-align: center;
+        }
+
+        span {
+            color: $pale;
+        }
+
+        .flower {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            top: 46%;
+            left: 29%;
+            opacity: .7;
+        }
+
+        .smaller {
+            width: 90px;
+            height: 100px;
+            top: 48%;
+            left: 38%;
+            opacity: .9;
+        }
+
+        button {
+            padding: 12px;
+            font-family: $sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            border-radius: 10px;
+            margin: auto;
+            outline: none;
+            display: block;
+            &:hover {
+                background: $pale;
+                color: $white;
+                transition: background-color 1s ease-out;
+            }
+        }
+
+        .button {
+            margin-top: 20px;
+        }
+
+        /* Form styling */
+        .signin, .signup {
+            display: block;
+        }
+
+        .signin form, .signup form {
+            padding: 0 20px;
+        }
+
+        .signin input, .signup input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+        }
+
+        .signin button, .signup button {
+            width: 100%;
+            background-color: #5c7aef;
+            border-radius: 25px;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .signin button:hover, .signup button:hover {
+            background-color: #4a67c0;
+        }
+
+        .forgot {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .forgot a {
+            font-size: 14px;
+            color: #5c7aef;
+            text-decoration: none;
+        }
+
+        .forgot a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="welcome">
+        <div class="pinkbox">
+            <div class="signup nodisplay">
+                <h1>register</h1>
+                <form autocomplete="off">
+                    <input type="text" placeholder="username">
+                    <input type="email" placeholder="email">
+                    <input type="password" placeholder="password">
+                    <input type="password" placeholder="confirm password">
+                    <button class="button submit">create account </button>
+                </form>
+            </div>
+            <div class="signin">
+                <h1>sign in</h1>
+                <form class="more-padding" autocomplete="off">
+                    <input type="text" placeholder="username">
+                    <input type="password" placeholder="password">
+                    <div class="checkbox">
+                        <input type="checkbox" id="remember" /><label for="remember">remember me</label>
+                    </div>
+                    <button class="button submit">login</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="leftbox">
+            <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
+            <p class="desc">pick your perfect <span>bouquet</span></p>
+            <img class="flower smaller" src="https://image.ibb.co/d5X6pn/1357d638624297b.jpg" alt="1357d638624297b" border="0">
+            <p class="account">have an account?</p>
+            <button class="button" id="signin">login</button>
+        </div>
+
+        <div class="rightbox">
+            <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
+            <p class="desc">pick your perfect <span>bouquet</span></p>
+            <img class="flower" src="https://preview.ibb.co/jvu2Un/0057c1c1bab51a0.jpg"/>
+            <p class="account">don't have an account?</p>
+            <button class="button" id="signup">sign up</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const signinButton = document.getElementById('signin');
+    const signupButton = document.getElementById('signup');
+
+    signinButton.addEventListener('click', () => {
+        document.querySelector('.signup').classList.add('nodisplay');
+        document.querySelector('.signin').classList.remove('nodisplay');
+    });
+
+    signupButton.addEventListener('click', () => {
+        document.querySelector('.signin').classList.add('nodisplay');
+        document.querySelector('.signup').classList.remove('nodisplay');
+    });
+</script>
+
+</body>
+</html>

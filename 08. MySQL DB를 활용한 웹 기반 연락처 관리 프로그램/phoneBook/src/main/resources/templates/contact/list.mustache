@@ -1,0 +1,26 @@
+{{>layout/header}}
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">photo</th>
+        <th scope="col">name</th>
+        <th scope="col">phoneNumber</th>
+        <th scope="col">address</th>
+        <th scope="col">relationship</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#contactList}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{photo}}</td>
+            <td>{{name}}</td>
+            <td>{{phoneNumber}}</td>
+            <td>{{address}}</td>
+            <td>{{relationship}}</td>
+        </tr>
+    {{/contactList}}
+    </tbody>
+</table>
+{{>layout/footer}}
