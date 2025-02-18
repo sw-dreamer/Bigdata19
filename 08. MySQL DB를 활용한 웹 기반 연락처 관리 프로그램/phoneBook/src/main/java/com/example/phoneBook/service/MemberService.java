@@ -33,7 +33,7 @@ public class MemberService {
         MemberEntity userEntity = MemberEntity.toMemberEntity(memberDTO);
 
         String password = memberDTO.getPassword();
-        String salt = "bigdata19";
+        String salt = "seongwook";
         String passwordWithSalt = salt + password;
 
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
