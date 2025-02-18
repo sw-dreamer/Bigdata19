@@ -1,0 +1,141 @@
+{{>layout/header}}
+<style>
+    .table-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    }
+    .table {
+        width: 100%;
+        table-layout: fixed;
+    }
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .action-buttons a {
+        text-decoration: none;
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .action-buttons .btn {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btn {
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 8px 15px;
+    }
+
+    .btn i {
+        margin-right: 5px;
+    }
+
+    .btn-danger {
+        background-color: #ff4d4d;
+        color: white;
+    }
+
+    .btn-warning {
+        background-color: #ffbf00;
+        color: white;
+    }
+
+    .btn-danger:hover {
+        background-color: #e60000;
+    }
+
+    .btn-warning:hover {
+        background-color: #ffcc00;
+    }
+</style>
+
+<div class="table-container">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">photo</th>
+            <th scope="col">이름</th>
+            <th scope="col">전화번호</th>
+            <th scope="col">주소</th>
+            <th scope="col">그룹</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#moimList}}
+            <tr>
+                <td>
+                    <img src="data:image/jpeg;base64,{{Bhotobase}}" alt="사진" style="width: 100px; height: 100px;" />
+                </td>
+                <td>{{name}}</td>
+                <td>{{phonenumber}}</td>
+                <td>{{address}}</td>
+                <td>{{gubunname}}</td>
+                <td class="action-buttons">
+                    <a href="/contact/{{memberId}}/{{contactId}}/edit">
+                        <button class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i> 수정
+                        </button>
+                    </a>
+                    <a href="/contact/{{memberId}}/{{contactId}}/delete">
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> 삭제
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        {{/moimList}}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    document.getElementById('emailDomain').addEventListener('change', function () {
+        const domain = this.value;
+        const customEmailField = document.getElementById('customEmail');
+
+        if (domain === 'direct') {
+            customEmailField.style.display = 'block';
+        } else {
+            customEmailField.style.display = 'none';
+        }
+    });
+
+    function submitForm() {
+        const emailPrefix = document.getElementById('emailPrefix').value;
+        const emailDomain = document.getElementById('emailDomain').value;
+        const customEmail = document.getElementById('customEmail').value;
+
+        let email = emailPrefix + "@" + emailDomain;
+        if (emailDomain === 'direct' && customEmail) {
+            email = customEmail;
+        }
+
+        document.getElementById('email').value = email;
+
+        const form = document.getElementById("signupForm");
+        form.submit();
+    }
+</script>
+
+{{>layout/footer}}

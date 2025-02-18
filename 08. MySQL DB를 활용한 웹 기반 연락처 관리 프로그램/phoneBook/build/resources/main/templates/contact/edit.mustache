@@ -1,0 +1,227 @@
+{{>layout/header}}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f7fc;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .card {
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        padding: 30px;
+    }
+
+    .card-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #555;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    }
+
+    .btn {
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-light {
+        background-color: #f8f9fa;
+        border: none;
+        color: #495057;
+    }
+
+    .btn-light:hover {
+        background-color: #e2e6ea;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .input-group .form-control {
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+    #sample4_postcode, #sample4_roadAddress, #sample4_jibunAddress {
+        width: 32%;
+        display: inline-block;
+    }
+
+    #sample4_detailAddress, #sample4_extraAddress {
+        width: 66%;
+        display: inline-block;
+    }
+
+    .d-flex {
+        justify-content: space-between;
+    }
+
+    #guide {
+        font-size: 0.8rem;
+        color: #888;
+    }
+</style>
+{{#msg}}
+    <div class="alert alert-primary alert-dismissible" id="alertMessage">
+        {{msg}}
+        <button id="dismissButton" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="closeAlert()"></button>
+    </div>
+{{/msg}}
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h3 class="card-title text-center mb-4">연락처 수정</h3>
+
+        <form action="/contact/{{memberId}}/{{contactid}}/edit" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="name">이름</label>
+                <input class="form-control" id="name" type="text" placeholder="이름을 입력하세요" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="phonenumber">전화번호</label>
+                <input class="form-control" id="phonenumber" type="text" minlength="12" maxlength="13" placeholder="전화번호를 입력하세요" name="phonenumber" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="address">주소</label>
+                <input type="text" id="address" placeholder="주소가 자동 입력됩니다." readonly name="address">
+                <div class="input-group">
+                    <input type="text" id="sample4_postcode" placeholder="우편번호">
+                    <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" >
+                </div>
+                도로명 주소 : <input type="text" id="sample4_roadAddress" placeholder="도로명주소" disabled><br>
+                지번주소 : <input type="text" id="sample4_jibunAddress" placeholder="지번주소" disabled><br>
+                상세주소 : <input type="text" id="sample4_detailAddress" placeholder="상세주소" ><br>
+                참고항목 : <input type="text" id="sample4_extraAddress" placeholder="참고항목" disabled>
+                <span id="guide" style="color:#999; display:none"></span>
+
+                <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+                <script>
+                    function sample4_execDaumPostcode() {
+                        new daum.Postcode({
+                            oncomplete: function(data) {
+                                var roadAddr = data.roadAddress; // 도로명 주소
+                                var jibunAddr = data.jibunAddress; // 지번 주소
+                                var extraRoadAddr = ''; // 참고 항목
+                                var postcode = data.zonecode; // 우편번호
+
+                                if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+                                    extraRoadAddr += data.bname;
+                                }
+                                if (data.buildingName !== '' && data.apartment === 'Y') {
+                                    extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                                }
+                                if (extraRoadAddr !== '') {
+                                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+                                }
+
+                                document.getElementById('sample4_postcode').value = postcode;
+                                document.getElementById('sample4_roadAddress').value = roadAddr;
+                                document.getElementById('sample4_jibunAddress').value = jibunAddr;
+                                document.getElementById('sample4_extraAddress').value = extraRoadAddr;
+
+                                var detailAddress = document.getElementById('sample4_detailAddress').value;
+                                var finalAddress = `${roadAddr} (${jibunAddr}) ${detailAddress} (${postcode})`;
+
+                                document.getElementById('address').value = finalAddress;
+                            }
+                        }).open();
+                    }
+
+                    document.getElementById('sample4_detailAddress').addEventListener('input', function() {
+                        var roadAddr = document.getElementById('sample4_roadAddress').value;
+                        var jibunAddr = document.getElementById('sample4_jibunAddress').value;
+                        var postcode = document.getElementById('sample4_postcode').value;
+                        var detailAddress = this.value;
+
+                        var finalAddress = `${roadAddr} ${detailAddress} (${postcode})`;
+                        document.getElementById('address').value = finalAddress;
+                    });
+                </script>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="gubunId">구분</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-lg example" name="gubunId" required>
+                    <option value="" disabled selected>선택하세요</option>
+                    <option value="1">가족</option>
+                    <option value="2">친구</option>
+                    <option value="3">기타</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">사진 </label>
+                <input class="form-control" type="file" id="formFile" name="photo">
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-primary w-40" type="submit">등록</button>
+                <button class="btn btn-light w-40" type="button" onclick="window.location.href='/contact/{{memberId}}/list'">취소</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('emailDomain').addEventListener('change', function () {
+        const domain = this.value;
+        const customEmailField = document.getElementById('customEmail');
+
+        if (domain === 'direct') {
+            customEmailField.style.display = 'block';
+        } else {
+            customEmailField.style.display = 'none';
+        }
+    });
+
+    function submitForm() {
+        const emailPrefix = document.getElementById('emailPrefix').value;
+        const emailDomain = document.getElementById('emailDomain').value;
+        const customEmail = document.getElementById('customEmail').value;
+
+        let email = emailPrefix + "@" + emailDomain;
+        if (emailDomain === 'direct' && customEmail) {
+            email = customEmail;
+        }
+
+        document.getElementById('email').value = email;
+
+        const form = document.getElementById("signupForm");
+        form.submit();
+    }
+</script>
+{{>layout/footer}}
