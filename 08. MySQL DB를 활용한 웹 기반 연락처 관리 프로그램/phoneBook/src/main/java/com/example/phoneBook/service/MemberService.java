@@ -33,7 +33,7 @@ public class MemberService {
         MemberEntity userEntity = MemberEntity.toMemberEntity(memberDTO);
 
         String password = memberDTO.getPassword();
-        String salt = "seongwook";
+        String salt = "swdreamer";
         String passwordWithSalt = salt + password;
 
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -64,7 +64,7 @@ public class MemberService {
             MemberEntity memberEntity = memberEntityOptional.get();
             log.info("memberEntity: {}", memberEntity);
 
-            String salt = "bigdata19";
+            String salt = "swdreamer";
             String passwordWithSalt = salt + password;
 
             try {
@@ -89,7 +89,7 @@ public class MemberService {
         if (memberEntityOptional.isPresent()) {
             MemberEntity memberEntity = memberEntityOptional.get();
 
-            String salt = "bigdata19";
+            String salt = "swdreamer";
             String passwordWithSalt = salt + newPassword;
 
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
