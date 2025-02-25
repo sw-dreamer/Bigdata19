@@ -50,15 +50,15 @@
 
 ## 프로그램 구조
 
-### **1. Model (모델)**
+### **1. Model **
 - 프로그램의 데이터 구조와 비즈니스 로직을 담당하며, 데이터베이스와의 상호작용을 관리합니다.
 - MySQL과 연동하여 연락처의 추가, 수정, 삭제, 조회, 회원가입, 로그인 등의 기능을 구현합니다.
 
-### **2. View (뷰)**
+### **2. View **
 - 사용자와 상호작용하는 웹 페이지를 처리합니다.
 - HTML과 JSP를 사용하여 사용자에게 입력 양식과 결과를 표시합니다.
 
-### **3. Controller (컨트롤러)**
+### **3. Controller **
 - 사용자의 입력을 처리하고, 해당 입력에 맞는 로직을 실행합니다.
 - 모델과 뷰 사이의 상호작용을 조정하며, 사용자가 요청한 데이터를 뷰에 전달하거나 모델에 데이터를 전달합니다.
 
@@ -84,6 +84,52 @@ MySQL에 데이터를 저장하거나 조회하는 작업을 처리합니다.
 모델에서 처리한 데이터를 컨트롤러를 통해 뷰에 전달하여 사용자에게 결과를 표시합니다.
 연락처 목록을 출력하거나, 로그인 후 사용자 맞춤형 화면을 보여줍니다.
 
+---
+## 결과 화면
+
+### 로그인 화면
+
+![image](https://github.com/user-attachments/assets/771176ee-07b1-40db-9398-65da3301cb1a)
+
+### 아이디 찾기 화면
+
+![image](https://github.com/user-attachments/assets/7c4a95d0-24e8-476a-85c7-14cae5867006)
+
+### 비밀번호 재설정 화면
+
+![image](https://github.com/user-attachments/assets/58d469b0-de81-424c-b977-ca6a0315afa3)
+
+### 회원가입 화면
+
+![image](https://github.com/user-attachments/assets/06387c5e-a513-4666-8544-40246918bef2)
+
+> 비밀번호 암호화 방식(SHA-256 salt 방식)을 통해서 실제로 DB에 저장되는 결과
+
+![image](https://github.com/user-attachments/assets/a762e03f-2d29-4942-850f-dc7fdcdf93b6)
+
+### 회원 로그인 화면
+
+![image](https://github.com/user-attachments/assets/e003f2a0-aecb-447b-b885-deacc6a50988)
+
+![image](https://github.com/user-attachments/assets/f398d16d-9fde-4a2e-8954-3f5b286ac336)
+
+### 연락처 등록 화면
+
+![image](https://github.com/user-attachments/assets/c037360d-7c92-4839-a590-28d185cef7e9)
+
+### 연락처 목록 화면
+
+![image](https://github.com/user-attachments/assets/2e55dd63-124a-47aa-9e42-a47e02a8f619)
+
+![image](https://github.com/user-attachments/assets/2ff162b0-aef3-468d-b26f-99d6ff7ca963)
+
+### 연락처 수정 화면
+
+![image](https://github.com/user-attachments/assets/d8ca16ca-e613-4fa2-8e66-60e38e2cd6a1)
+
+### 연락처 검색 화면
+
+![image](https://github.com/user-attachments/assets/855bac3d-4043-443d-8d67-27394805bb8b)
 
 ---
 
