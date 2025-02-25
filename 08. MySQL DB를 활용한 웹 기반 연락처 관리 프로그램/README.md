@@ -105,6 +105,7 @@ MySQL에 데이터를 저장하거나 조회하는 작업을 처리합니다.
 
 ![image](https://github.com/user-attachments/assets/c9a54d80-8149-42c4-bb47-a8c31e8aa1ce)
 
+![image](https://github.com/user-attachments/assets/e467d533-1d48-49f4-a5bf-f72fecd0754a)
 
 ### 연락처 목록 화면
 
