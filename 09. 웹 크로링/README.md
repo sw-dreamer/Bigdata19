@@ -134,4 +134,37 @@ print(response.text)
 
 ![image](https://github.com/user-attachments/assets/87e4aa57-d54f-4a1a-beec-3a2c4069d30a)
 
+![image](https://github.com/user-attachments/assets/33ca0636-9c76-425c-b01d-486201f9c161)
 
+이를 활용해서 코드로 갖고오는 방법은 아래와 같습니다.
+
+```
+# 구글 검색
+# https://www.google.com/search?q=%EB%94%A5%EB%9F%AC%EB%8B%9D&oq=%EB%94%A5%EB%9F%AC%EB%8B%9D&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORixAxiABDIMCAEQABhDGIAEGIoFMgwIAhAuGEMYgAQYigUyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQo0MzEwNWowajE1qAIAsAIA&sourceid=chrome&ie=UTF-8
+# URL에서 Query String은 URL 뒤에 오는 물음표(?) 이후의 부분을 말합니다. 보통 검색 결과나 특정 데이터를 서버에 전달할 때 사용됩니다. 이 부분은 key=value 형태로 이루어져 있으며, 여러 개의 쿼리 파라미터가 있을 경우 & 기호로 구분됩니다. 
+
+import requests
+
+url = 'https://www.google.com/search'
+
+# get 요청에 사용할 파마리터 설정 : 딕셔너리 형태로 설정
+
+getparam = {'q':'딥러닝'}
+
+# 요청 헤더 설정(일반적인 브라우저 사용하는 것 처럼 활용)
+getheaders = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+}
+
+
+# 요청 보내기 : get
+response = requests.get(url,params=getparam,headers=getheaders)
+
+# response 상태 확인, 텍스트 추출
+print('응답 상태 코드 :',response.status_code)
+print(response.text)
+```
+
+#### 결과 화면
+
+![image](https://github.com/user-attachments/assets/dac6634a-f6a7-47c5-bf56-17c7726e4687)
