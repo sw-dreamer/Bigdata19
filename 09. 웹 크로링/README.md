@@ -128,4 +128,10 @@ print(response.text)
 
 ![image](https://github.com/user-attachments/assets/fde57dca-cce8-4f6f-a007-f92e0b7d5773)
 
+### 5. 구글에서 검색한 결과 갖고 오기
+
+`딥러닝` 이라고 검색을 해보면 아래와 같이 나옵니다.
+
+![image](https://github.com/user-attachments/assets/87e4aa57-d54f-4a1a-beec-3a2c4069d30a)
+
 
