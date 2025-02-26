@@ -291,3 +291,4 @@ except requests.RequestException as e:
 
 # 결과
  - requests 모듈은 데이터를 문자열(html,json)로 가져오는 것까지만 한다.
+ - requests 모듈은 가공이 안되어 BeautifulSoup library 사용해서 가공을 한다.
