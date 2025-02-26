@@ -198,6 +198,7 @@ response = requests.get(url,  headers=headers)
 
 print(response.text)
 ```
+#### 결과 화면
 정상적으로 출력
 ![image](https://github.com/user-attachments/assets/88a6e98c-e6de-4616-9e43-6b2ec282c67a)
 
