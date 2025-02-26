@@ -38,5 +38,28 @@ conda list requests
 ![image](https://github.com/user-attachments/assets/70572133-0539-4454-8772-3c0b6d5c4ecf)
 
 ## 5. `07-01 파이썬 웹크로링 기본.ipynb` 파일 생성
-위 과정을 완료한 후, `07-01 파이썬 웹크로링 기본.ipynb` 파일을 생성합니다..
+
+위 과정을 완료한 후, `07-01 파이썬 웹크로링 기본.ipynb` 파일을 생성합니다.
+
 ![image](https://github.com/user-attachments/assets/40e98aaa-3036-49c9-8e87-11991ce5936d)
+
+## 6. `requests` 기본 활용
+```
+#기본적인 get 요청
+import requests
+
+# 크로링한 웹페이지 url 저장
+url = 'https://www.naver.com' #메인 페이지
+
+#get 요청
+response = requests.get(url)
+
+#응답 코드 확인
+print(response)
+print('응답 상태 코드 :',response.status_code)
+
+#페이지  내용 출력(html 코드)
+print('='*100)
+print(response.text)
+print('='*100)
+```
