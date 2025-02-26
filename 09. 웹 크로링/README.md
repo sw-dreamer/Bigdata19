@@ -229,5 +229,35 @@ print('응답 코드 :',response.status_code)
 print(response.json()) #Rest API 방식에서 서버에서 넘어온 JSON 값
 ```
 
+#### 결과화면
 ![image](https://github.com/user-attachments/assets/e7d25932-4557-4f3c-9ab3-3cbc75ac18f8)
 
+### 8. JSON 데이터 요청
+
+```
+import requests
+# JSON 데이터 요청 
+# 증권사 api, Rest API => 응답이 데이터 온다 (JSON)
+# https://jsonplaceholder.typicode.com/ 을 통해서 연습이 가능하다.
+
+# 게시판 1번 글 요청 -> json 응답
+
+url = 'https://jsonplaceholder.typicode.com/posts/1'
+
+response=requests.get(url)
+
+# 여기 까지 response는 결과가 json 형태이긴 하지만 문자열로 나옴
+
+# 위 문자열을 딕셔너리로 변환
+
+data = response.json()
+
+print('제목 :',data['title'])
+print('내용 :',data['body'])
+```
+
+#### 결과 화면
+
+![image](https://github.com/user-attachments/assets/2659702a-5a22-49a6-b5b1-efb3624fa24c)
+
+### 9. 크롤링시 예외처리
