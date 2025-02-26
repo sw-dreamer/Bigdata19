@@ -172,3 +172,33 @@ print(response.text)
 실제로 코드를 실행하면 아래와 같이 오류가 발생합니다.
 ![image](https://github.com/user-attachments/assets/70ff9fa7-4fb9-41bf-b661-2f3d6b68b59a)
 
+### 6. 네이버 검색
+
+`딥러닝` 이라고 검색을 해보면 아래와 같이 나옵니다.
+
+![image](https://github.com/user-attachments/assets/78178fdd-777d-485c-aef5-a09a91e92467)
+
+![image](https://github.com/user-attachments/assets/48dc53e9-a5ad-4809-9731-011e3ead4f6e)
+
+```
+# naver 검색
+query = '딥러닝'
+url = f'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query={query}'
+
+
+# get 요청에 사용할 파라미터 설정 : 딕셔너리 형태 설정
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+}
+
+
+# 요청 보내기 : get
+response = requests.get(url,  headers=headers)
+
+
+print(response.text)
+```
+정상적으로 출력
+![image](https://github.com/user-attachments/assets/88a6e98c-e6de-4616-9e43-6b2ec282c67a)
+
+
