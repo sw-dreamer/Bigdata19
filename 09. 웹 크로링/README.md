@@ -206,4 +206,28 @@ print(response.text)
 정상적으로 출력
 ![image](https://github.com/user-attachments/assets/88a6e98c-e6de-4616-9e43-6b2ec282c67a)
 
+### 7. POST 방식 처리
+
+```
+import requests
+# post 방식 요청 처리하기 : insert, update, delete 등
+# request.post(url,data)
+# url : 요청 주소
+# data : 서버로 보낼 데이터
+
+url = 'https://httpbin.org/post'
+
+#보낼 데이터
+data ={
+    'username':'testuser',
+    'password':'testpassword'
+}
+
+# post 요청
+response = requests.post(url,data=data)
+print('응답 코드 :',response.status_code)
+print(response.json()) #Rest API 방식에서 서버에서 넘어온 JSON 값
+```
+
+![image](https://github.com/user-attachments/assets/e7d25932-4557-4f3c-9ab3-3cbc75ac18f8)
 
