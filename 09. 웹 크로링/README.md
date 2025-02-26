@@ -47,17 +47,16 @@ conda list requests
 
 ### 0. 개요
 
-```
-### requests 모듈
-1. 모듈 소개
-    1. requests 모듈을 http 요청을 쉽게 보내고 결과를 받는 기능을 가지고 있다
-        1. 요청(request)  : get, post
-        2. 응답(response)         
-```
+- requests 모듈을 http 요청을 쉽게 보내고 결과를 받는 기능을 가지고 있다
+- 요청(request)  : get, post
+- 응답(response)         
 
 ### 1. 기본 활용
 ```
-#기본적인 get 요청
+# 기본적인 get 요청
+# get(url) : 해당 url에 http get 요청을 보낸다 
+# status_code : 응답 코드(200(정상처리), 400(요청 잘못), 500(서버 에러))
+
 import requests
 
 # 크로링한 웹페이지 url 저장
@@ -79,6 +78,7 @@ print('응답 상태 코드 :',response.status_code)
 ### 2. 페이지 코드 출력
 ```
 #페이지  내용 출력(html 코드)
+# text : 웹페이지를 문자열로 변환
 print('='*100)
 print(response.text)
 print('='*100)
