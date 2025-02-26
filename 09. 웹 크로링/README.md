@@ -178,7 +178,8 @@ print(response.text)
 
 ![image](https://github.com/user-attachments/assets/78178fdd-777d-485c-aef5-a09a91e92467)
 
-![image](https://github.com/user-attachments/assets/48dc53e9-a5ad-4809-9731-011e3ead4f6e)
+![image](https://github.com/user-attachments/assets/50c94516-1728-407d-8556-8e87a28a2107)
+
 
 ```
 # naver 검색
