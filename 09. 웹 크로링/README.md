@@ -44,6 +44,8 @@ conda list requests
 ![image](https://github.com/user-attachments/assets/40e98aaa-3036-49c9-8e87-11991ce5936d)
 
 ## 6. `requests` 기본 활용
+
+### 1. 기본 활용
 ```
 #기본적인 get 요청
 import requests
@@ -57,9 +59,31 @@ response = requests.get(url)
 #응답 코드 확인
 print(response)
 print('응답 상태 코드 :',response.status_code)
+```
 
+위의 코드를 작성 해 보면 `200`으로 정상적으로 response 가 오는 것을 확인 할 수 있습니다.
+
+### 결과 화면
+![image](https://github.com/user-attachments/assets/5d756aad-7cca-40df-83cb-5ea944d4c9be)
+
+### 2. 페이지 코드 출력
+```
 #페이지  내용 출력(html 코드)
 print('='*100)
 print(response.text)
 print('='*100)
 ```
+
+### 결과 화면
+![image](https://github.com/user-attachments/assets/c5dcd04f-c145-414e-9340-2da480aba0a3)
+
+### 3. 페이지 코드 단어수 확인
+
+```
+print('단어수:',len(response.text))
+```
+
+### 결과 화면
+
+![image](https://github.com/user-attachments/assets/f5968eac-a3a6-4bf7-8db1-e7363112cfe8)
+
