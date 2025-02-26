@@ -134,7 +134,8 @@ print(response.text)
 
 ![image](https://github.com/user-attachments/assets/87e4aa57-d54f-4a1a-beec-3a2c4069d30a)
 
-![image](https://github.com/user-attachments/assets/33ca0636-9c76-425c-b01d-486201f9c161)
+![image](https://github.com/user-attachments/assets/53f81eb6-d36c-4015-a56d-4bb772a09bf5)
+
 
 이를 활용해서 코드로 갖고오는 방법은 아래와 같습니다.
 
