@@ -289,6 +289,12 @@ except requests.RequestException as e:
 #### 결과 화면
 ![image](https://github.com/user-attachments/assets/1befc3df-cec4-4a1a-930a-4cc9d4dbfa39)
 
+정상 실행 시
+
+![image](https://github.com/user-attachments/assets/01f73fdd-1c67-4edc-856f-b758f6373c55)
+
+![image](https://github.com/user-attachments/assets/108163b4-23e2-456a-b0b0-4fed376f4dd5)
+
 # 결과
  - requests 모듈은 데이터를 문자열(html,json)로 가져오는 것까지만 한다.
  - requests 모듈은 가공이 안되어 BeautifulSoup library 사용해서 가공을 한다.
