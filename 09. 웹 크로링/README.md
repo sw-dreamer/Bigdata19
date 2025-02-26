@@ -261,3 +261,33 @@ print('내용 :',data['body'])
 ![image](https://github.com/user-attachments/assets/2659702a-5a22-49a6-b5b1-efb3624fa24c)
 
 ### 9. 크롤링시 예외처리
+
+테스트 홈페이지를 제작하여 테스트를 하여야합니다.
+
+![image](https://github.com/user-attachments/assets/b5c7773b-1846-49e9-b1c0-936dd56c08db)
+
+위와 같이 `127.0.0.1에서 연결을 거부했습니다.`라는 오류를 일부로 발생 시켰습니다.
+
+```
+# 크롤링시 예외처리 및 오류 대응 방법
+
+url = 'http://127.0.0.1:8080/member/login'
+
+#예외 처리
+try:
+    response=requests.get(url,timeout=5)
+    response.raise_for_status() #4xx, 5xx 서버에서 응답값 왔을때 예외 발생
+    print(response.text[:100])
+except requests.Timeout:
+    print('요청 시간 초과')
+except requests.HTTPError as e:
+    print('HTTP 오류 :',e)
+except requests.RequestException as e:
+    print('요청 중 오류 발생 :',e)
+```
+
+#### 결과 화면
+![image](https://github.com/user-attachments/assets/1befc3df-cec4-4a1a-930a-4cc9d4dbfa39)
+
+# 결과
+ - requests 모듈은 데이터를 문자열(html,json)로 가져오는 것까지만 한다.
