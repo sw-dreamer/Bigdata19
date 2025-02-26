@@ -168,3 +168,7 @@ print(response.text)
 #### 결과 화면
 
 ![image](https://github.com/user-attachments/assets/dac6634a-f6a7-47c5-bf56-17c7726e4687)
+
+실제로 코드를 실행하면 아래와 같이 오류가 발생합니다.
+![image](https://github.com/user-attachments/assets/70ff9fa7-4fb9-41bf-b661-2f3d6b68b59a)
+
