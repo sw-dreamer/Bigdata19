@@ -45,7 +45,7 @@ conda list requests
 
 ## 6. `requests` 기본 활용
 
-### 0. 개요
+### 0. 모듈 소개
 
 - requests 모듈을 http 요청을 쉽게 보내고 결과를 받는 기능을 가지고 있다
 - 요청(request)  : get, post
