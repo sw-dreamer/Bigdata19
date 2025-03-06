@@ -389,7 +389,7 @@
 - **Numpy 1.23.4**
 - **Pandas 2.2.3**
 - **Matplotlib 3.10.0**
-- **Seaborn**
+- **Seaborn 0.13.2**
 - **ipykernel  6.29.5**
 - **googlemaps 4.10.0**
   
